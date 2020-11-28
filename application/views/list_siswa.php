@@ -20,7 +20,8 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
+          <h3 class="box-title">trial</h3>
+		  <a class="btn btn-primary" href="<?=site_url('siswa/tambah')?>" >Tambah </a>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -36,9 +37,10 @@
                 <tr>
                   <th>NIS</th>
                   <th>Nama</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>TTL</th>
+                  <th>alamat</th>
+                  <th>jenis kelamin</th>
+                  <th>action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,9 +48,13 @@
                 <tr>
                   <td><?=$siswa->nis;?></td>
                   <td><?=$siswa->nama;?></td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
+                  <td><?=$siswa->tempat_lahir;?>, <?=$siswa->tanggal_lahir;?></td>
+                  <td><?=$siswa->alamat;?></td>
+                  <td><?=gender($siswa->jenis_kelamin);?></td>
+                  <td>
+					<a class="btn btn-danger" href="<?=site_url('siswa/do_delete/').$siswa->id?>" >Delete </a>
+					<a class="btn btn-info" href="<?=site_url('siswa/view/').$siswa->id?>" >update </a>
+				  </td>
                 </tr>
 				<?php }?>
                 </tfoot>
